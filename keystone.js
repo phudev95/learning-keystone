@@ -9,6 +9,7 @@ var handlebars = require('express-handlebars');
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
+var helpers = require('./templates/views/helpers');
 
 keystone.init({
 	'name': 'Learning KeystoneJS',
@@ -24,7 +25,7 @@ keystone.init({
 		layoutsDir: 'templates/views/layouts',
 		partialsDir: 'templates/views/partials',
 		defaultLayout: 'default',
-		helpers: new require('./templates/views/helpers')(),
+		helpers: new helpers(),
 		extname: '.hbs',
 	}).engine,
 
